@@ -373,7 +373,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1157245006}
-        m_MethodName: HandleShoot
+        m_MethodName: InputOnShootEventRaised
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -388,7 +388,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1157245008}
-        m_MethodName: OnMoveInputEvent
+        m_MethodName: OnMoveInputEventRaised
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
