@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerShootingSystem : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class PlayerShootingSystem : MonoBehaviour
     private float m_lastShootTime;
     public float m_fireRate;
     private Transform m_transform;
+    private bool m_isShooting;
 
     // Start is called before the first frame update
     void Start()
@@ -19,10 +21,17 @@ public class PlayerShootingSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Shoot();
-        }
+        if(m_isShooting) Shoot();
+    }
+
+    public void InputOnShootEventRaised(InputAction.CallbackContext _ctx)
+    {
+        ToggleShoot();
+    }
+
+    private void ToggleShoot()
+    {
+        m_isShooting = !m_isShooting;
     }
 
     private void Shoot()
